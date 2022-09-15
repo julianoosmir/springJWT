@@ -70,9 +70,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // Não cheque essas requisições
                 .authorizeRequests().antMatchers(PUBLIC_MATCHERS).permitAll()
                 .antMatchers(HttpMethod.GET, PUBLIC_MATCHERS_GET).permitAll()
-                .antMatchers(HttpMethod.POST, PUBLIC_MATCHERS_POST).permitAll().
+                .antMatchers(HttpMethod.POST, PUBLIC_MATCHERS_POST).permitAll()
+                .antMatchers("/h2/**").permitAll()
                 // Qualquer outra requisição deve ser checada
-                anyRequest().authenticated().and().exceptionHandling()
+                .anyRequest().authenticated().and().exceptionHandling()
                 .authenticationEntryPoint(jwtAuthenticationEntryPoint).and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);

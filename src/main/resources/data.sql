@@ -1,0 +1,1 @@
+/*insert into usuario values (1,'email@email','java','$2a$12$yPIH7ITdP3wfCrcIBWiSWuY6cQ/iSNSq6epWeVT4Crd8VqImJUoba')*/

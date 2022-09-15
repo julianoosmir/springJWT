@@ -3,9 +3,11 @@ package br.com.academy.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Id;    
+import javax.persistence.Id;
+import javax.persistence.Table;    
 
 @Entity
+@Table(name = "usuario")
 public class Usuario {
 
     private static final long serialVersionUID = 1l;
